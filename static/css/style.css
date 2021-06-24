@@ -1,0 +1,84 @@
+
+body {
+    margin:0;
+    padding:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: lightseagreen;
+    color: black;
+    text-align: center;
+    box-sizing: content-box;
+    font-size: 16px;
+}
+h1 {
+    text-shadow: grey 2px 2px;
+}
+
+#listContainer {
+    width: 60%;
+    margin: 20px auto;
+    text-align: left;
+
+}
+    #listContainer .itemBox h2 {
+        display: inline-block;
+        
+    }
+    #listContainer .itemBox {
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 5px;
+        width: 100%;
+        display: inline-block;
+        padding: 10px;
+        margin-bottom: 5px;
+        
+    }
+    #listContainer p {
+        display: inline;
+        
+    }
+    #listContainer .deleteButton {
+        float: right;
+        font-size: 2rem;
+        margin-top: 10px;
+    }
+    .itemBox:nth-child(odd) {
+        background-color: cornsilk;
+    }
+    .itemBox:nth-child(even) {
+        background-color: burlywood;
+    }
+
+#addItem {
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: cornflowerblue;
+    width: 200px;
+    margin: 20px auto;
+}
+#addForm {
+    font-size: 1rem;
+    display: none;
+    width: 200px;
+    margin: 0 auto;
+}
+.addButton {
+    font-size: 1rem;
+}
+#userForm {
+    font-size: 1rem;
+}
+ @media screen and (max-width:800px) {
+     #listContainer {
+         width: calc(100% - 20px);
+         margin: 10px 0 0 0;
+     }
+     #listContainer .itemBox {
+         border-radius: 0;
+         border-left: 0;
+         border-right: 0;
+     }
+     #listContainer .itemBox .deleteButton {
+         font-size: 1.5rem;
+     }
+ }

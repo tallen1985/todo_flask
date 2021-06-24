@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>To Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name='viewport' 
+     content='width=device-width, initial-scale=1.0, maximum-scale=1.0, 
+     user-scalable=0' >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+<body>
+{% if name %}
+    <h1>{{name.title()}}'s List</h1>
+{% else %}
+    <h1> Handy List</h1>
+{% endif %}
+
+    <h2 id='addItem'>Add Item</h2>
+        <div id="addForm">
+                <form method="POST" action='/add'>
+                <input type="hidden" name='user' value={{name}}>
+                <label for='addName'>New Item</label>
+                <br>
+                <input type='text' id= 'addName' name='item'></input>
+                <br>
+                <label for='addNote'>Notes</label>
+                <br>
+                <input type='text' id='addNote' name='note'></input>
+                <br>
+                <button class='btn' type='submit'>Add Item</button>
+                </form>
+        </div>
+
+    <div id='listContainer'>
+        {% for item in items %}
+             <div class="itemBox">
+                    <h2 class="itemName">{{item.item}}</h2>
+                    <p>- {{item.note}}</p>
+                    <form method="POST" action="./delete">
+                        <input type="hidden" value="{{item.item}}" name="item">
+                        <input type="hidden" name="user" value={{name}}>
+                        <input id="deleteButton" type="submit" value="Delete">
+                    </form>
+            </div>
+        {% endfor %}
+    </div>
+    <footer>
+    <p>&copy - Grey Gato Media 2021</p>
+<script src="./static/js/script.js"></script>
+</body>
+</html>
