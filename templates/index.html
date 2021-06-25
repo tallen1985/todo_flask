@@ -34,7 +34,7 @@
         {% for item in items %}
              <div class="itemBox">
                     <h2 class="itemName">{{item.item}}</h2>
-                    <p>- {{item.note}}</p>
+                    <p>- {{item.note}} - Created by <a href="/{{item.user}}">{{item.user | title}}</a></p>
                     <form method="POST" action="./delete">
                         <input type="hidden" value="{{item.item}}" name="item">
                         <input type="hidden" name="user" value={{name}}>
@@ -43,6 +43,7 @@
             </div>
         {% endfor %}
     </div>
+    <a href="/">Return to Main List</a>
     <footer>
     <p>&copy - Grey Gato Media 2021</p>
 <script src="./static/js/script.js"></script>
