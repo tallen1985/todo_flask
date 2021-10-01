@@ -13,10 +13,15 @@ h1 {
     text-shadow: grey 2px 2px;
 }
 
+h2 {
+    box-shadow: 4px 4px 3px darkslategray;
+}
+
 #listContainer {
     width: 60%;
     margin: 20px auto;
     text-align: left;
+    display: flex;
 
 }
     #listContainer .itemBox h2 {
@@ -24,6 +29,7 @@ h1 {
         
     }
     #listContainer .itemBox {
+        flex: 1 0 400px;
         align-items: center;
         border: 2px solid black;
         border-radius: 5px;
@@ -31,6 +37,7 @@ h1 {
         display: inline-block;
         padding: 10px;
         margin-bottom: 5px;
+        box-shadow: 4px 4px 3px darkslategray;
         
     }
     #listContainer p {
